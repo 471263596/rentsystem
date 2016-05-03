@@ -4,7 +4,10 @@ import java.util.Scanner;
 
 public class Car extends Moto {
 	private String type;
-
+	public Car(String MotoNo){
+		super(MotoNo);
+	}
+	public Car(){}
 	public String getType() {
 		return type;
 	}

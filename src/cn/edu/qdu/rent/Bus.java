@@ -3,6 +3,10 @@ package cn.edu.qdu.rent;
 
 public class Bus extends Moto{
 	private String seatCount;
+	public Bus(String MotoNo){
+		super(MotoNo);
+	}
+	public Bus(){}
 	public double rentType(int day){
 		
 		if(seatCount.equals("<=16")){

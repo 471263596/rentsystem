@@ -3,7 +3,10 @@ package cn.edu.qdu.rent;
 public abstract class Moto {
 	private String vehicle_no;
 	private int price;
-	
+	public Moto(String MotoNo){
+		this.vehicle_no=MotoNo;
+	}
+	public Moto(){}
 	public abstract double rentType(int day);
 
 	public String getVehicle_no() {
