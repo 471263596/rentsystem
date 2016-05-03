@@ -6,8 +6,9 @@ public abstract class Moto {
 	public Moto(String MotoNo){
 		this.vehicle_no=MotoNo;
 	}
-	public Moto(){}
-	public abstract double rentType(int day);
+	public double rentType(int day){
+		return day*price;
+	}
 
 	public String getVehicle_no() {
 		return vehicle_no;

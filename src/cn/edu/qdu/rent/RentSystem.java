@@ -10,14 +10,13 @@ public class RentSystem {
 		System.out.println("----------欢迎来到租赁系统----------");
 		System.out.println("-----------------------------------\n");
 	}
-	public void chooseStyle(){
+	public void rentMoto(){
 		Scanner input=new Scanner(System.in);
 		System.out.println("要租几辆车：");
 		int n=input.nextInt();
-		int[] num=new int[n];
 		//选择车辆类别
-		Moto moto=new Car();
-		Bus bus=new Bus();
+		
+		
 		int days;//租赁天数
 		String[] carType={"别克商务","宝马550i","别克林荫大道"};
 		String[] busType={"<=16",">16"};
@@ -31,11 +30,13 @@ public class RentSystem {
 				do{
 					System.out.print("请输入车型（1.别克商务 2.宝马550i 3.别克林荫大道）：");
 					int a=input.nextInt();
+					Moto moto=new Car("鲁A3152");
 					Car car=(Car)moto;
 					car.setType(carType[a-1]);
 					System.out.print("请输入租赁天数：");
 					days=input.nextInt();//获取天数
-					total+=car.rentType(days);
+					System.out.println(car.getType()+car.getVehicle_no()+" 日租费（元/天）："+car.getPrice()); 
+					total+=moto.rentType(days);
 					
 				}while(flag1);
 				i++;
@@ -44,12 +45,13 @@ public class RentSystem {
 				boolean flag1=false;
 				do{
 					System.out.print("请输入车型（1.<=16座  2.>16座）：");
-					int a=input.nextInt();                       
+					int a=input.nextInt();    
+					Bus bus=new Bus("鲁A4321");
 					bus.setSeatCount(busType[a-1]);
 					System.out.print("请输入租赁天数：");
 					days=input.nextInt();//获取天数
+					System.out.println(bus.getSeatCount()+bus.getVehicle_no()+" 日租费（元/天）："+bus.getPrice());
 					total+=bus.rentType(days);
-					
 				}while(flag1);
 				i++;
 			}
@@ -65,6 +67,6 @@ public class RentSystem {
     public static void main(String[] args) {
 		RentSystem rent=new RentSystem();
 		rent.menu();
-		rent.chooseStyle();
+		rent.rentMoto();
 	}
 }

@@ -7,7 +7,6 @@ public class Car extends Moto {
 	public Car(String MotoNo){
 		super(MotoNo);
 	}
-	public Car(){}
 	public String getType() {
 		return type;
 	}
@@ -18,12 +17,11 @@ public class Car extends Moto {
 
 	public double rentType(int day) {
 		if (type.equals("别克商务")) {
-			setVehicle_no("鲁A3152");
+			
 			setPrice(600);
 		}
 
 		else if (type.equals("宝马550i")) {
-			setVehicle_no("鲁A2152");
 			setPrice(500);
 		}
 
@@ -31,7 +29,7 @@ public class Car extends Moto {
 			setVehicle_no("鲁A2152");
 			setPrice(300);
 		}
-		return day*getPrice();
+		return super.rentType(day);
 
 	}
 
