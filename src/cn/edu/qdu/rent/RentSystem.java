@@ -32,15 +32,13 @@ public class RentSystem {
 				do{
 					System.out.print("请输入车型（1.别克商务 2.宝马550i 3.别克林荫大道）：");
 					int a=input.nextInt();
-					Moto moto=new Car("鲁A3152");
-					Car car=(Car)moto;
-					car.setType(carType[a-1]);
+					Moto moto=new Car("鲁A3152",carType[a-1]);
 					System.out.print("请输入租赁天数：");
 					
 					cusDay[i]=input.nextInt();//获取天数
 					total+=moto.rentType(cusDay[i]);
 					cusType[i]=carType[a-1];//
-					cusPrice[i]=car.getPrice();//
+					cusPrice[i]=moto.getPrice();//
 					
 				}while(flag1);
 				i++;

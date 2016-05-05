@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class Car extends Moto {
 	private String type;
-	public Car(String MotoNo){
+	public Car(String MotoNo,String type){
 		super(MotoNo);
+		this.type=type;
 	}
 	public String getType() {
 		return type;
