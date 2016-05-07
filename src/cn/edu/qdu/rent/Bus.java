@@ -3,8 +3,9 @@ package cn.edu.qdu.rent;
 
 public class Bus extends Moto{
 	private String seatCount;
-	public Bus(String MotoNo){
+	public Bus(String MotoNo,String type){
 		super(MotoNo);
+		this.seatCount=type;
 	}
 	public double rentType(int day){
 		
